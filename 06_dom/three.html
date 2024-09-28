@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    
+    <script>
+        const div = document.createElement('div');
+        console.log(div);
+        div.className = 'main';
+        div.id = Math.round(Math.random() * 10 + 1); // It will give random number.
+        div.setAttribute('title','mytitle'); // setting up the custom title
+        div.style.backgroundColor = 'orange';
+        div.style.padding = '15px';
+        div.style.borderRadius = '15px';
+        // div.innerHTML = "Hello , I am Tanish Rajput"; // Don't use this , because it will override the original value and consumes more time complexity
+        const textNode = document.createTextNode("Hello , I am Tanish Rajput") // Use this
+        div.appendChild(textNode);
+
+        document.body.appendChild(div);
+
+    </script>
+</body>
+</html>
