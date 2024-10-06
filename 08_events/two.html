@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h1>Hello, How are you? </h1>
+    
+    <button id="stop">Stop</button>
+    <script>
+        const sayTanish = function(){
+            console.log("Tanish Rajput");
+        }
+
+        const changeText = function(){
+            document.querySelector('h1').innerHTML = "JavaScript Series";
+        }
+
+        setTimeout(sayTanish,2000);
+        const changeMe = setTimeout(changeText,2000);
+        // clearInterval(changeMe);
+
+        document.querySelector('#stop').addEventListener('click',() => {
+            clearInterval(changeMe);
+            console.log("Stopped");
+        })
+    </script>
+</body>
+</html>
