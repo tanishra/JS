@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <h1>Hello, Coders</h1>
+
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+        const sayDate = ()=> {
+            console.log("Tanish",Date.now());
+        }
+
+        let intervalId;
+        // setInter(sayDate,1000,'hi');
+        clearInterval(intervalId);
+        document.querySelector('#start').addEventListener('click',() =>{
+            if(!intervalId){
+                intervalId = setInterval(sayDate,2000);
+            }
+        });
+
+        document.querySelector('#stop').addEventListener('click',()=> {
+            clearInterval(intervalId);
+            intervalId = null;
+        })
+
+        // clearInterval(intervalId);
+    </script>
+</body>
+</html>
