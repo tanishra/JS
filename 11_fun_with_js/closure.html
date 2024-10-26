@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button id="orange">Orange</button>
+
+    <button id="green">Green</button>
+</body>
+<script>
+
+    // // Lexical Scoping
+    // function init(){
+    //     var name = "Safari";
+
+    //     function displayName(){
+    //         // displayName() is the inner function, that forms the closure
+    //         console.log(name);  // use variable declared in the parent function
+    //     }
+
+    //     displayName();
+    // }
+
+    // init();
+
+    // // Closure
+
+    // function outer(){
+    //     const name = "Safari";
+        
+    //     function inner(){
+    //         console.log(name);
+    //     }
+
+    //     return inner;
+    // }
+
+    // myfun = outer();
+    // myfun();
+
+</script>
+
+<script>
+    // document.getElementById('orange').onclick = () =>{
+    //     document.body.style.backgroundColor = 'orange';
+    // }
+
+    // document.getElementById('green').onclick = () =>{
+    //     document.body.style.backgroundColor = 'green';
+    // }
+
+    function clickHandler(color){
+        // document.body.style.backgroundColor = `${color}`;
+
+        return () => document.body.style.backgroundColor = `${color}`;
+    }
+
+    // document.getElementById('green').onclick = clickHandler('green'); This will give error
+    document.getElementById('orange').onclick = clickHandler('orange');
+    document.getElementById('green').onclick = clickHandler('green');
+</script>
+</html>
